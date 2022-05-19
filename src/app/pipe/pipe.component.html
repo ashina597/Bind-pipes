@@ -1,0 +1,30 @@
+<!-- <p>{{me.name | uppercase}}</p>
+<p>{{me.networthy | currency:'USD' }}</p>
+<p>{{me.dob| date:'fullDate' | uppercase}}</p>
+<p>{{me.rating| number:'1.1-2' }}</p>
+<p>{{me.covered | percent}}</p> -->
+
+<!-- <p>Angular says {{prom |async}}</p> -->
+<div class="container">
+<div class="form">
+<p class="warning"></p>
+<input type="text" class="name" placeholder="Enter name" [(ngModel)]="trainee_name"><br>
+<input type="text" class="age" placeholder="Enter age" [(ngModel)]="trainee_age"><br>
+<button (click)="addTrainee()" class="button">Add Student</button><br>
+<!-- <p>{{text |summary:6}}</p> -->
+<input type="text" class="search" placeholder="Search .." [(ngModel)]="searchstring"><br>
+<input type="text" class="reverse" placeholder="Reverse a string" [(ngModel)]="output">
+<p>Reversed string: {{output| reverseString}}</p>
+</div>
+<div class="details">
+<div class="header">
+    <p> Trainee Name</p>
+    <p> Trainee Age</p>
+</div>
+<div class ='content' *ngFor="let trainee of trainees | search:searchstring | sort">
+    <p>{{trainee.name}}</p>
+    <p> {{trainee.age}}</p>
+</div>
+</div>
+</div>
+
